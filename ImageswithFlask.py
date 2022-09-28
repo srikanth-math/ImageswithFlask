@@ -3,7 +3,7 @@ import uuid
 import os
 from tensorflow.keras.models import load_model
 import numpy as np
-from werkzeug import secure_filename
+#from werkzeug import secure_filename
 from tensorflow.keras.applications import MobileNet
 from PIL import Image, ImageFile
 from io import BytesIO
@@ -40,8 +40,8 @@ def upload_image():
         return render_template('imageml.html', prediction="You did not select an image")
     
     if file and allowed_file(file.filename):
-        filename= secure_filename(file.filename)
-        print("***"+filename)
+        #filename= secure_filename(file.filename)
+        #print("***"+filename)
         x=[]
         ImageFile.LOAD_TRUNCATED_IMAGES=False
         img= Image.open(BytesIO(file.read()))
